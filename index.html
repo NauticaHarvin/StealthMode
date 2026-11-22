@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Nocturne | House Music & Nightlife in Uptown Chicago</title>
+<meta name="description" content="Le Nocturne is an upscale boutique live music venue in Uptown Chicago with a 25,000-watt KV2 sound system, immersive lighting, and a private patio. See upcoming events and reserve a table.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- SEO talking point: event markup lets parties show up in Google's event results -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "Chosen Few DJs House Music Day Party",
+  "startDate": "2026-11-28T16:00-06:00",
+  "endDate": "2026-11-28T22:00-06:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "MusicVenue",
+    "name": "Le Nocturne",
+    "address": { "@type": "PostalAddress", "streetAddress": "4810 N Broadway", "addressLocality": "Chicago", "addressRegion": "IL", "postalCode": "60640", "addressCountry": "US" }
+  },
+  "performer": [
+    { "@type": "Person", "name": "Terry Hunter" },
+    { "@type": "Person", "name": "Wayne Williams" },
+    { "@type": "Person", "name": "Alan King" }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0a0810;
+    --bg-2: #13101c;
+    --surface: #1a1626;
+    --text: #f3eff8;
+    --muted: #a59cb5;
+    --accent: #c94dff;
+    --accent-2: #ff5fa8;
+    --gold: #e8c27a;
+    --line: rgba(255,255,255,.09);
+    --radius: 14px;
+    --max: 1180px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  .display { font-family: Unbounded, sans-serif; letter-spacing: -.02em; line-height: 1.05; }
+  .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+
+  /* concept banner */
+  .concept { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; text-align: center; font-size: .8rem; padding: 7px 12px; font-weight: 500; }
+
+  /* nav */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(10,8,16,.82); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-family: Unbounded, sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: .04em; }
+  .logo span { color: var(--accent); }
+  .nav ul { display: flex; gap: 30px; list-style: none; font-size: .9rem; color: var(--muted); }
+  .nav ul a:hover { color: var(--text); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 24px; border-radius: 999px; font-weight: 600; font-size: .92rem; transition: transform .15s, box-shadow .15s, background .15s; border: 0; cursor: pointer; font-family: inherit; }
+  .btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; box-shadow: 0 8px 30px rgba(201,77,255,.35); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(201,77,255,.5); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,.25); color: var(--text); background: transparent; }
+  .btn-ghost:hover { background: rgba(255,255,255,.07); }
+  .nav .btn { padding: 10px 20px; font-size: .85rem; }
+  .menu-toggle { display: none; background: none; border: 0; color: var(--text); font-size: 1.5rem; cursor: pointer; }
+
+  /* hero */
+  .hero { position: relative; min-height: 88vh; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-slides { position: absolute; inset: 0; }
+  .hero-slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.6s ease; transform: scale(1.05); }
+  .hero-slides img.active { opacity: 1; animation: drift 9s ease-out forwards; }
+  @keyframes drift { to { transform: scale(1); } }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,8,16,.25) 0%, rgba(10,8,16,.55) 55%, var(--bg) 100%), radial-gradient(ellipse at 20% 80%, rgba(201,77,255,.35), transparent 60%); }
+  .hero-content { position: relative; z-index: 2; padding: 0 20px 90px; max-width: var(--max); margin: 0 auto; width: 100%; }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 5.6rem); font-weight: 800; max-width: 14ch; margin: 14px 0 20px; }
+  .hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p { max-width: 520px; color: #d8d0e4; font-size: 1.08rem; margin-bottom: 30px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* next event */
+  .next-event { position: relative; z-index: 3; margin-top: -50px; }
+  .event-card { display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 30px; box-shadow: 0 20px 60px rgba(0,0,0,.45); }
+  .date-badge { text-align: center; padding: 12px 18px; border-radius: 12px; background: linear-gradient(160deg, var(--accent), var(--accent-2)); min-width: 82px; }
+  .date-badge .m { font-size: .72rem; letter-spacing: .2em; font-weight: 600; }
+  .date-badge .d { font-family: Unbounded, sans-serif; font-size: 2rem; font-weight: 800; line-height: 1; }
+  .event-card h3 { font-family: Unbounded, sans-serif; font-size: 1.25rem; margin: 4px 0 6px; }
+  .event-card .meta { color: var(--muted); font-size: .92rem; }
+  .lineup { color: var(--gold); font-size: .92rem; font-weight: 500; }
+
+  section { padding: 110px 0; }
+  .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 48px; flex-wrap: wrap; }
+  .section-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); font-weight: 700; margin-top: 10px; }
+  .section-head p { color: var(--muted); max-width: 420px; }
+
+  /* experience */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature { position: relative; border-radius: var(--radius); overflow: hidden; min-height: 420px; display: flex; align-items: flex-end; border: 1px solid var(--line); }
+  .feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .feature:hover img { transform: scale(1.06); }
+  .feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(10,8,16,.95)); }
+  .feature-body { position: relative; z-index: 2; padding: 28px; }
+  .feature .stat { font-family: Unbounded, sans-serif; font-size: 2.2rem; font-weight: 800; color: var(--gold); }
+  .feature h3 { font-family: Unbounded, sans-serif; font-size: 1.1rem; margin: 2px 0 8px; }
+  .feature p { color: #cfc6dc; font-size: .93rem; }
+
+  /* gallery */
+  .gallery-section { background: var(--bg-2); }
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 12px; }
+  .gallery figure { border-radius: 10px; overflow: hidden; position: relative; }
+  .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+  .gallery figure:hover img { transform: scale(1.05); }
+  .gallery .tall { grid-row: span 2; }
+  .gallery .wide { grid-column: span 2; }
+  .gallery-note { margin-top: 18px; color: var(--muted); font-size: .85rem; }
+
+  /* reserve */
+  .reserve-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: start; }
+  .reserve-info h2 { font-size: clamp(1.9rem, 4vw, 3rem); margin: 10px 0 18px; }
+  .reserve-info p { color: var(--muted); margin-bottom: 22px; }
+  .perks { list-style: none; display: grid; gap: 12px; }
+  .perks li { display: flex; gap: 12px; align-items: center; color: #ddd5e8; }
+  .perks li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); flex-shrink: 0; }
+  form { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: grid; gap: 16px; }
+  .tabs { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg); border-radius: 999px; padding: 4px; }
+  .tabs button { background: none; border: 0; color: var(--muted); padding: 10px; border-radius: 999px; font-family: inherit; font-weight: 600; cursor: pointer; }
+  .tabs button.on { background: var(--surface); color: var(--text); box-shadow: 0 2px 10px rgba(0,0,0,.4); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: grid; gap: 6px; font-size: .82rem; color: var(--muted); font-weight: 500; }
+  input, select, textarea { background: var(--bg); border: 1px solid var(--line); color: var(--text); border-radius: 10px; padding: 12px 14px; font: inherit; font-size: .95rem; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  textarea { min-height: 90px; resize: vertical; }
+  .form-done { display: none; text-align: center; padding: 30px 0; }
+  .form-done h3 { font-family: Unbounded, sans-serif; margin-bottom: 8px; }
+
+  /* visit */
+  .visit { border-top: 1px solid var(--line); }
+  .visit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+  .visit h4 { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .visit p, .visit a { color: #d8d0e4; }
+  .visit a:hover { color: var(--accent); }
+
+  footer { border-top: 1px solid var(--line); padding: 34px 0; color: var(--muted); font-size: .85rem; }
+  .foot { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .socials { display: flex; gap: 18px; }
+  .socials a:hover { color: var(--text); }
+
+  @media (max-width: 900px) {
+    .nav ul, .nav .btn { display: none; }
+    .menu-toggle { display: block; }
+    .nav.open ul { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); padding: 20px; gap: 18px; border-bottom: 1px solid var(--line); }
+    .features { grid-template-columns: 1fr; }
+    .feature { min-height: 320px; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
+    .reserve-grid, .visit-grid { grid-template-columns: 1fr; }
+    .event-card { grid-template-columns: auto 1fr; }
+    .event-card .btn { grid-column: 1 / -1; }
+    section { padding: 80px 0; }
+  }
+  @media (max-width: 520px) {
+    .row { grid-template-columns: 1fr; }
+    .hero-content { padding-bottom: 80px; }
+    .event-card { padding: 22px; gap: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="concept">Concept redesign prepared for Le Nocturne by Nautica Harvin &middot; not the live site</div>
+
+<header>
+  <nav class="nav wrap" id="nav">
+    <a href="#" class="logo">LE <span>NOCTURNE</span></a>
+    <ul>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reserve">Private Events</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#reserve" class="btn btn-primary">Reserve a Table</a>
+    <button class="menu-toggle" aria-label="Open menu" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+  </nav>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="hero-slides" id="slides">
+    <img class="active" src="https://nocturne-chicago.com/wp-content/uploads/2020/02/P1000129ce-scaled.jpg" alt="Le Nocturne main room light show">
+    <img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/P1000091ce-scaled.jpg" alt="Le Nocturne sound system and dance floor">
+    <img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/X8A0102-scaled.jpg" alt="Le Nocturne bar and lounge">
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow">Boutique Night Club &middot; Uptown Chicago</span>
+    <h1 class="display">Where Chicago <em>house music</em> lives.</h1>
+    <p>25,000 watts of KV2 sound, 99+ intelligent lights, and a room built for the music. Upscale, intimate, and unforgettable.</p>
+    <div class="hero-ctas">
+      <a href="#events" class="btn btn-primary">See Upcoming Events</a>
+      <a href="#reserve" class="btn btn-ghost">Book a Table</a>
+    </div>
+  </div>
+</section>
+
+<div class="next-event wrap" id="events">
+  <div class="event-card">
+    <div class="date-badge"><div class="m">NOV</div><div class="d">28</div></div>
+    <div>
+      <span class="eyebrow">Next Up &middot; Saturday &middot; 4PM to 10PM</span>
+      <h3>Chosen Few DJs House Music Day Party</h3>
+      <div class="lineup">Terry Hunter &middot; Wayne Williams &middot; Alan King &middot; + special guest Emmaculate</div>
+    </div>
+    <a href="https://www.instagram.com/lenocturnechicago/" class="btn btn-primary" target="_blank" rel="noopener">Get Tickets</a>
+  </div>
+</div>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">The Experience</span>
+        <h2 class="display">Built for the music.</h2>
+      </div>
+      <p>Not just a club. A sound room, a light show, and a patio, all under one roof on North Broadway.</p>
+    </div>
+    <div class="features">
+      <article class="feature">
+        <img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/P1000091ce-scaled.jpg" alt="KV2 Audio sound system">
+        <div class="feature-body">
+          <div class="stat">25K</div>
+          <h3>Watts of Pure Clarity</h3>
+          <p>A state-of-the-art KV2 Audio system tuned for deep, clean house and soulful sets.</p>
+        </div>
+      </article>
+      <article class="feature">
+        <img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/P1000129ce-scaled.jpg" alt="Immersive light show">
+        <div class="feature-body">
+          <div class="stat">99+</div>
+          <h3>Intelligent Lights</h3>
+          <p>A fully immersive visual experience, run live by our resident lighting jockey.</p>
+        </div>
+      </article>
+      <article class="feature">
+        <img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/X8A0102-scaled.jpg" alt="Lounge seating and bar service">
+        <div class="feature-body">
+          <div class="stat">35</div>
+          <h3>Guest Outdoor Patio</h3>
+          <p>Comfortable seating throughout, full bar service, and a spacious patio for fresh air between sets.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Gallery</span>
+        <h2 class="display">Nights at Le Nocturne.</h2>
+      </div>
+      <a href="https://www.instagram.com/lenocturnechicago/" class="btn btn-ghost" target="_blank" rel="noopener">Follow @lenocturnechicago</a>
+    </div>
+    <div class="gallery">
+      <figure class="wide tall"><img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/P1000129ce-scaled.jpg" alt="Light show over the dance floor"></figure>
+      <figure><img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/lady-400x400.png" alt="Guest at Le Nocturne"></figure>
+      <figure><img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/patio-400x400.png" alt="Outdoor patio"></figure>
+      <figure><img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/baf-400x400.png" alt="Bar at Le Nocturne"></figure>
+      <figure><img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/X8A0102-scaled.jpg" alt="Lounge"></figure>
+      <figure class="wide"><img src="https://nocturne-chicago.com/wp-content/uploads/2020/02/P1000091ce-scaled.jpg" alt="Sound system"></figure>
+    </div>
+    <p class="gallery-note">Fresh event photography and recap video, shot every month, would live here.</p>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="wrap reserve-grid">
+    <div class="reserve-info">
+      <span class="eyebrow">Tables &amp; Private Events</span>
+      <h2 class="display">Make it your night.</h2>
+      <p>Reserve a table for the next party, or book Le Nocturne for birthdays, launches, and private celebrations. We'll get back to you within 24 hours.</p>
+      <ul class="perks">
+        <li>Bottle and table service</li>
+        <li>Private and semi-private buyouts</li>
+        <li>Pro sound, lighting, and DJ booth included</li>
+        <li>Patio space for up to 35 guests</li>
+      </ul>
+    </div>
+    <form id="rform" onsubmit="event.preventDefault(); this.querySelector('.fields').style.display='none'; this.querySelector('.form-done').style.display='block';">
+      <div class="tabs" role="tablist">
+        <button type="button" class="on" onclick="setTab(this,'table')">Reserve a Table</button>
+        <button type="button" onclick="setTab(this,'private')">Private Event</button>
+      </div>
+      <div class="fields" style="display:grid; gap:16px">
+        <div class="row">
+          <label>Name<input required placeholder="Your name"></label>
+          <label>Phone<input type="tel" required placeholder="(312) 555-0123"></label>
+        </div>
+        <label>Email<input type="email" required placeholder="you@email.com"></label>
+        <div class="row">
+          <label>Date<input type="date" required></label>
+          <label>Guests<select><option>2 to 4</option><option>5 to 8</option><option>9 to 15</option><option>16+</option></select></label>
+        </div>
+        <label id="detailsLabel">Anything we should know?<textarea placeholder="Birthday, bottle preferences, etc."></textarea></label>
+        <button class="btn btn-primary" type="submit">Send Request</button>
+      </div>
+      <div class="form-done">
+        <h3>Request sent.</h3>
+        <p style="color:var(--muted)">Our team will follow up within 24 hours.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <h4>Location</h4>
+      <p>4810 N Broadway<br>Chicago, IL 60640</p>
+      <p style="margin-top:8px"><a href="https://maps.google.com/?q=4810+N+Broadway+Chicago+IL" target="_blank" rel="noopener">Get directions &rarr;</a></p>
+    </div>
+    <div>
+      <h4>Reservations</h4>
+      <p><a href="tel:+13129007861">(312) 900-7861</a></p>
+      <p><a href="mailto:jeffre@nocturnechicago.com">jeffre@nocturnechicago.com</a></p>
+    </div>
+    <div>
+      <h4>General</h4>
+      <p><a href="mailto:contact@nocturnechicago.com">contact@nocturnechicago.com</a></p>
+      <p style="margin-top:8px; color:var(--muted)">Get event announcements first. Join the list.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Le Nocturne Chicago</span>
+    <div class="socials">
+      <a href="https://www.instagram.com/lenocturnechicago/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/lenocturnechicago" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/channel/UCienIYlppcZwO_baeICaj0A" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hero slideshow
+  const slides = document.querySelectorAll('#slides img');
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 6000);
+
+  // Table / private event tabs
+  function setTab(btn, mode) {
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    const label = document.getElementById('detailsLabel');
+    label.firstChild.textContent = mode === 'private' ? 'Tell us about your event' : 'Anything we should know?';
+    label.querySelector('textarea').placeholder = mode === 'private'
+      ? 'Type of event, budget, buyout or partial, etc.'
+      : 'Birthday, bottle preferences, etc.';
+  }
+</script>
+</body>
+</html>
