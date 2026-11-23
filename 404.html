@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-root="./">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var seg = location.pathname.split("/")[1];
+      var root = location.hostname.endsWith("github.io") && seg ? "/" + seg + "/" : "/";
+      document.write('<base href="' + root + '">');
+    })();
+  </script>
+  <title>Page not found — Studio</title>
+  <meta name="description" content="Websites, local search, and social for med spas and independent businesses.">
+  <meta property="og:title" content="Page not found — Studio">
+  <meta property="og:description" content="Websites, local search, and social for med spas and independent businesses.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="./assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <script type="module" src="./assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <site-header active=""></site-header>
+
+  <main id="main">
+
+    <section class="container not-found">
+      <h1>Page not found</h1>
+      <p class="lead">The page you are looking for doesn't exist or has been moved.</p>
+      <a class="btn btn--primary" href="./">Return to homepage</a>
+    </section>
+
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>
