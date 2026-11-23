@@ -1,10 +1,10 @@
 # Studio website
 
-A hand-coded rebuild of the Framer project **Designfast (copy)**. It uses plain HTML, CSS and JavaScript, with no build step and no framework.
+Foreground agency website build.
 
 ## Run it locally
 
-1. **Download the images (one time only).** This pulls them from Framer's CDN into `assets/img/`:
+1. **Download the images (one time only).**
    ```bash
    bash scripts/download-assets.sh
    ```
@@ -20,7 +20,7 @@ services/                   Services index + 4 detail pages
 about-us/  contact/
 case-studies/               Index + 6 detail pages
 legal/                      Index + privacy / cookie / terms
-404.html                    GitHub Pages uses this for unknown URLs
+404.html                    GitHub Pages used for unknown URLs
 
 assets/css/tokens.css       Colors, type scale, spacing: re-theme here
 assets/css/base.css         Reset, typography, .container / .section
@@ -47,8 +47,3 @@ The nav, footer and "Let's work together" CTA are native Web Components (custom 
 | `case-studies/*/` | "Visit live website" still uses the template's placeholder URL. |
 | Template copy | The testimonials, team, case studies, pricing and legal pages are still Designfast placeholder content. Replace them before launch. |
 
-## Deploy to GitHub Pages
-Push the repo, then go to **Settings → Pages → Deploy from branch → `main` / root**. No build is needed. Commit `assets/img/` so the images ship with the site.
-
-## Going interactive later
-`main.js` is split into small `init*()` functions, and the CSS is organized by component. That makes it straightforward to move to React/Vite or Astro later: each `<section>` in the HTML becomes a component, each `init*` becomes that component's effect, and `tokens.css` carries over unchanged. **Astro** is the smoothest next step, because it keeps these HTML pages and lets you add interactive "islands" only where you need them.
